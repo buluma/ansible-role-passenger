@@ -56,6 +56,11 @@ jobs:
         with:
           python-version: '3.x'
 
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
+
       - name: Install test dependencies.
         run: pip3 install ansible molecule[docker] docker
 
