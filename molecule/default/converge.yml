@@ -39,14 +39,14 @@
           - tzdata
         state: present
 
-    # Install Ruby Version 2.7.5
-    - name: Install ruby 2.7.5
+    # Install Ruby Version 2.3.1
+    - name: Install ruby 2.3.1
       ansible.builtin.command: rbenv install {{ rbenv_ruby_version }}
       args:
         creates: '{{ rbenv_root }}/versions/{{ rbenv_ruby_version }}/bin/ruby'
       vars:
         rbenv_root: /usr/local/rbenv
-        rbenv_ruby_version: 2.7.5
+        rbenv_ruby_version: 2.3.1
       environment:
         CONFIGURE_OPTS: '--disable-install-doc'
         RBENV_ROOT: '{{ rbenv_root }}'
