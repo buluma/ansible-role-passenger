@@ -4,6 +4,18 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 
+- name: Install ruby 2.7.5
+  ansible.builtin.command: rbenv install {{ rbenv_ruby_version }}
+  args:
+    creates: '{{ rbenv_root }}/versions/{{ rbenv_ruby_version }}/bin/ruby'
+  vars:
+    rbenv_root: /usr/local/rbenv
+    rbenv_ruby_version: 2.7.5
+  environment:
+    CONFIGURE_OPTS: '--disable-install-doc'
+    RBENV_ROOT: '{{ rbenv_root }}'
+    PATH: '{{ rbenv_root }}/bin:{{ rbenv_root }}/shims:{{ rbenv_plugins }}/ruby-build/bin:{{ ansible_env.PATH }}'
+
 - name: Define nginx_user.
   set_fact:
     nginx_user: "{{ __nginx_user }}"

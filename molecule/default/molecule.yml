@@ -1,9 +1,16 @@
 ---
+#
+# Ansible managed
+#
 dependency:
   name: galaxy
   # options:
   #   role-file: requirements.yml
   #   requirements-file: requirements.txt
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 driver:
   name: docker
 platforms:
@@ -18,3 +25,5 @@ provisioner:
   name: ansible
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
+verifier:
+  name: ansible
