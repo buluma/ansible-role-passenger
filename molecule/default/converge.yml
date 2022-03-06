@@ -25,7 +25,7 @@
 
   roles:
     - role: buluma.bootstrap
-    - role: geerlingguy.ruby
+    - role: buluma.ruby
     - role: geerlingguy.nodejs
     # - role: buluma.passenger
 
