@@ -27,7 +27,7 @@
     - role: buluma.bootstrap
     - role: geerlingguy.ruby
     - role: geerlingguy.nodejs
-    - role: geerlingguy.passenger
+    - role: buluma.passenger
 
   tasks:
     - name: Install rails dependencies.
