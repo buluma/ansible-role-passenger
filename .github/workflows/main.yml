@@ -9,6 +9,10 @@ name: CI
     - cron: "30 5 * * 4"
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 defaults:
   run:
     working-directory: 'buluma.passenger'
