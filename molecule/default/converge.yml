@@ -24,6 +24,7 @@
       when: ansible_os_family == 'Debian'
 
   roles:
+    - role: buluma.bootstrap
     - role: geerlingguy.ruby
     - role: geerlingguy.nodejs
     - role: geerlingguy.passenger
