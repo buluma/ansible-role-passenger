@@ -66,8 +66,8 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.5
-          bundler-cache: true
-          cache-version: 1
+          bundler-cache: false
+          cache-version: 2
       - name: molecule
         uses: buluma/molecule-action@v4.0.6
         with:
