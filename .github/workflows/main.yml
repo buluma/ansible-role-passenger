@@ -58,7 +58,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6
+          ruby-version: 2.8
           bundler-cache: true
 
       - name: Install test dependencies.
