@@ -41,7 +41,7 @@ jobs:
           yamllint .
   molecule:
     name: Molecule
-    needs: lint
+    # needs: lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -60,12 +60,12 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Setup Ruby 2.3.1
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.3.1
-          bundler-cache: false
-          cache-version: 3
+      # - name: Setup Ruby 2.3.1
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 2.3.1
+      #     bundler-cache: false
+      #     cache-version: 3
 
       - name: Install test dependencies.
         run: pip3 install ansible molecule[docker] docker ruby
