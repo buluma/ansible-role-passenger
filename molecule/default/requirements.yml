@@ -2,4 +2,4 @@
 - src: buluma.bootstrap
 - src: geerlingguy.ruby
 - src: geerlingguy.nodejs
-- src: buluma.passenger
+# - src: buluma.passenger
