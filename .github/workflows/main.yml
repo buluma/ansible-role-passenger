@@ -7,6 +7,7 @@ name: CI
       - master
   schedule:
     - cron: "30 5 * * 4"
+  workflow_dispatch:
 
 defaults:
   run:
@@ -36,6 +37,7 @@ jobs:
           yamllint .
   molecule:
     name: Molecule
+    needs: lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
