@@ -1,9 +1,6 @@
 ---
 # tasks file for passenger
-# Variable setup.
-- name: Include OS-specific variables.
-  include_vars: "{{ ansible_os_family }}.yml"
-
+# Install Ruby
 - name: Install ruby 2.7.5
   ansible.builtin.command: rbenv install {{ rbenv_ruby_version }}
   args:
@@ -15,6 +12,10 @@
     CONFIGURE_OPTS: '--disable-install-doc'
     RBENV_ROOT: '{{ rbenv_root }}'
     PATH: '{{ rbenv_root }}/bin:{{ rbenv_root }}/shims:{{ rbenv_plugins }}/ruby-build/bin:{{ ansible_env.PATH }}'
+
+# Variable setup.
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
 
 - name: Define nginx_user.
   set_fact:
