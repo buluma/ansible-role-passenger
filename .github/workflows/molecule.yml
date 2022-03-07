@@ -40,17 +40,21 @@ jobs:
             tag: "bionic"
           - image: "ubuntu"
             tag: "latest"
-          - image: "docker-ubuntu2204-ansible"
-            tag: "latest"
-          - image: "docker-ubuntu2104-ansible"
-            tag: "latest"
+          - image: "ubuntu"
+            tag: "18.04"
           - image: "docker-ubuntu2004-ansible"
+            tag: "latest"
+          - image: "docker-centos7-ansible"
+            tag: "latest"
+          - image: "docker-ubuntu1804-ansible"
             tag: "latest"
           - image: "ubuntu-python3"
             tag: "latest"
           - image: "ubuntu-test"
             tag: "latest"
           - image: "ubuntu-dev"
+            tag: "latest"
+          - image: "centos-systemd"
             tag: "latest"
     steps:
       - name: checkout
@@ -63,7 +67,7 @@ jobs:
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.5
+          ruby-version: 2.3.1
           bundler-cache: false
           cache-version: 2
       - name: molecule
