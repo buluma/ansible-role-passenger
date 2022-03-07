@@ -38,24 +38,24 @@ jobs:
         config:
           - image: "docker-ubuntu-systemd"
             tag: "bionic"
-          - image: "ubuntu"
-            tag: "latest"
-          - image: "ubuntu"
-            tag: "18.04"
-          - image: "docker-ubuntu2004-ansible"
-            tag: "latest"
-          - image: "docker-centos7-ansible"
-            tag: "latest"
-          - image: "docker-ubuntu1804-ansible"
-            tag: "latest"
-          - image: "ubuntu-python3"
-            tag: "latest"
+          # - image: "ubuntu"
+          #   tag: "latest"
+          # - image: "ubuntu"
+          #   tag: "18.04"
+          # - image: "docker-ubuntu2004-ansible"
+          #   tag: "latest"
+          # - image: "docker-centos7-ansible"
+          #   tag: "latest"
+          # - image: "docker-ubuntu1804-ansible"
+          #   tag: "latest"
+          # - image: "ubuntu-python3"
+          #   tag: "latest"
           - image: "ubuntu-test"
             tag: "latest"
-          - image: "ubuntu-dev"
-            tag: "latest"
-          - image: "centos-systemd"
-            tag: "latest"
+          # - image: "ubuntu-dev"
+          #   tag: "latest"
+          # - image: "centos-systemd"
+          #   tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -68,8 +68,8 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.3.1
-          bundler-cache: false
-          cache-version: 2
+          # bundler-cache: false
+          # cache-version: 2
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
