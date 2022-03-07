@@ -15,7 +15,7 @@ concurrency:
 
 defaults:
   run:
-    working-directory: "${{ github.repository }}"
+    working-directory: 'buluma.passenger'
 
 jobs:
 

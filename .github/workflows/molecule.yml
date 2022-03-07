@@ -70,6 +70,10 @@ jobs:
           ruby-version: 2.3.1
           bundler-cache: false
           cache-version: 2
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
       - name: molecule
         uses: buluma/molecule-action@v4.0.6
         with:
