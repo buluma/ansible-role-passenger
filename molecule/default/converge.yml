@@ -27,7 +27,7 @@
     - role: buluma.bootstrap
     - role: buluma.python_pip
     - role: buluma.ruby_gems
-    - role: geerlingguy.nodejs
+    - role: buluma.nodejs
     # - role: buluma.passenger
 
   tasks:
