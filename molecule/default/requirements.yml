@@ -1,5 +1,6 @@
 ---
 - src: buluma.bootstrap
+- src: buluma.python_pip
 - src: buluma.ruby
 - src: geerlingguy.nodejs
 # - src: buluma.passenger
