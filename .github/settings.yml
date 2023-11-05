@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Install and Configure Passenger with Nginx.
+  homepage: https://buluma.github.io/
+  topics: server, passenger, nginx, ansible, molecule, tox, playbook

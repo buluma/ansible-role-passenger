@@ -6,11 +6,19 @@
 name: Ansible Molecule
 
 on:
-  # Schedule updates (once daily)
+  push:
+    branches:
+      - master
+      - main
+      - testing
+    paths-ignore:
+      - '**/README.md'
+      - '**/CHANGELOG.md'
+    tags_ignore:
+      - '*'
+  pull_request:
   schedule:
-    - cron: '7 4 * * *'
-  workflow_dispatch:
-  push: {branches: ["master", "main", "testing"]}
+    - cron: '31 16 16 * *'
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -21,61 +29,32 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-        with:
-          path: "${{ github.repository }}"
-      - name: molecule
-        uses: buluma/molecule-action@v4.0.6
-        with:
-          command: lint
+        uses: actions/checkout@v4
+      - name: ansible-lint
+        uses: ansible-community/ansible-lint-action@main
   test:
-    # needs:
-    #   - lint
+    needs:
+      - lint
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
         config:
-          - image: "docker-ubuntu-systemd"
-            tag: "bionic"
-          # - image: "ubuntu"
-          #   tag: "latest"
-          # - image: "ubuntu"
-          #   tag: "18.04"
-          # - image: "docker-ubuntu2004-ansible"
-          #   tag: "latest"
-          # - image: "docker-centos7-ansible"
-          #   tag: "latest"
-          # - image: "docker-ubuntu1804-ansible"
-          #   tag: "latest"
-          # - image: "ubuntu-python3"
-          #   tag: "latest"
-          - image: "ubuntu-test"
+          - image: "fedora-systemd"
+            tag: "37"
+          - image: "fedora-systemd"
             tag: "latest"
-          # - image: "ubuntu-dev"
-          #   tag: "latest"
-          # - image: "centos-systemd"
-          #   tag: "latest"
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: "${{ github.repository }}"
       - name: disable apparmor for mysql
         run: sudo ln -s /etc/apparmor.d/usr.sbin.mysqld /etc/apparmor.d/disable/
       - name: parse apparmor for mysql
         run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 2.3.1
-          # bundler-cache: false
-          # cache-version: 2
-      - name: Set up Python 3.
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
       - name: molecule
-        uses: buluma/molecule-action@v4.0.6
+        uses: buluma/molecule-action@v5.0.9
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
