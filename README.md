@@ -1,10 +1,10 @@
-# [Ansible role passenger](#passenger)
+# Ansible role [passenger](https://galaxy.ansible.com/ui/standalone/roles/buluma/passenger/documentation)
 
 Install and Configure Passenger with Nginx.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-passenger/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-passenger/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-passenger.svg)](https://github.com/buluma/ansible-role-passenger/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-passenger.svg)](https://github.com/buluma/ansible-role-passenger/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-passenger.svg)](https://github.com/buluma/ansible-role-passenger/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-passenger/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-passenger/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-passenger.svg)](https://github.com/buluma/ansible-role-passenger/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-passenger.svg)](https://github.com/buluma/ansible-role-passenger/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-passenger.svg)](https://github.com/buluma/ansible-role-passenger/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/passenger)](https://galaxy.ansible.com/ui/standalone/roles/buluma/passenger/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -185,13 +185,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-passenger/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-passenger/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)
