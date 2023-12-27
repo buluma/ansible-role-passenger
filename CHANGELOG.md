@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-passenger/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-passenger/compare/3.0.0...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#7](https://github.com/buluma/ansible-role-passenger/issues/7)
+
 ## [3.0.0](https://github.com/buluma/ansible-role-passenger/tree/3.0.0) (2022-03-06)
 
 [Full Changelog](https://github.com/buluma/ansible-role-passenger/compare/bb12ed669e2e9445068af2ae90b1eda6e531792c...3.0.0)
